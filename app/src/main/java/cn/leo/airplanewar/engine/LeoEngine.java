@@ -9,6 +9,7 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.SystemClock;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -370,7 +371,14 @@ public class LeoEngine extends SurfaceView implements Runnable {
      * @param rsID
      */
     public void stopSound(int rsID) {
-        sp.stop(soundsStop.remove(rsID));
+        try {
+            Integer temp = soundsStop.remove(rsID);
+            if (temp != null)
+                sp.stop(temp);
+        }
+        catch (Exception o){
+            Log.e("zzzzz", "stopSound: ", o);
+        }
     }
 
     /**
