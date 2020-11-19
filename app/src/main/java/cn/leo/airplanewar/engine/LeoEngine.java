@@ -377,7 +377,7 @@ public class LeoEngine extends SurfaceView implements Runnable {
                 sp.stop(temp);
         }
         catch (Exception o){
-            Log.e("zzzzz", "stopSound: ", o);
+            Log.e("stopSoundError: ","I have fix it, it will never be shown.", o);
         }
     }
 
